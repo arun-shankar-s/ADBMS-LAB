@@ -13,3 +13,5 @@ salesperson(salespersonid,name,phone)
 
 b) For the salesperson named joe, list the following information for all the cars he has 
 sold: serial number, manufacturer, salesprice.
+
+c) List the serial number, model no. of cars that have no options.
