@@ -11,4 +11,5 @@ salesperson(salespersonid,name,phone)
 
 2. Do the following using PL/SQL:
 
-a) Create a trigger that prints the change in price everytime the price of the car is changed.
+A) Create a trigger that prints the change in price everytime the price of the car is changed.
+B) Create a databse trigger before delete for each row ,not allowing deletion and giving an appropriate message for car table.
