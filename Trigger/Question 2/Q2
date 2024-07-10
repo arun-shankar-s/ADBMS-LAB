@@ -1,0 +1,13 @@
+# EMPLOYEE DATABASE APPLICATION
+
+AIM: 
+
+1.Create the following database for an application and insert values to it.
+
+employee(empno,ename)
+manager(mno,mname)
+
+2. Do the following using PL/SQL:
+
+A) Create a trigger that may insert a tuple into EMPLOYEE. When a tuple is updated into MANAGER, the trigger has to check
+ whether the new tuple has first component 50 or less and if so so insert the tuple into Employee.
