@@ -1,0 +1,18 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE TRIGGER DELE
+  2  BEFORE DELETE ON CAR1
+  3  FOR EACH ROW
+  4  BEGIN
+  5  raise_application_error(-20768,'Deletion not allowed');
+  6  END;
+  7  /
+
+Trigger created.
+
+SQL> DELETE FROM CAR1 WHERE SNO=101;
+DELETE FROM CAR1 WHERE SNO=101
+            *
+ERROR at line 1:
+ORA-20768: Deletion not allowed
+ORA-06512: at "SCOTT.DELE", line 2
+ORA-04088: error during execution of trigger 'SCOTT.DELE'
