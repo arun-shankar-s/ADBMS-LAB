@@ -1,0 +1,40 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2    NO EMPLOYEE2.ENO%TYPE;
+  3    NAME EMPLOYEE2.NAME%TYPE;
+  4    SALARY EMPLOYEE2.SALARY%TYPE;
+  5    COMM EMPLOYEE2.COMM%TYPE;
+  6    TS NUMBER := 0; -- Initialize total salary variable
+  7  
+  8    CURSOR SCURSOR IS
+  9      SELECT 
+ 10        ENO,
+ 11        NAME,
+ 12        SALARY,
+ 13        COMM
+ 14      FROM EMPLOYEE2;
+ 15  BEGIN
+ 16    OPEN SCURSOR;
+ 17    LOOP
+ 18      FETCH SCURSOR INTO NO, NAME, SALARY, COMM;
+ 19      EXIT WHEN SCURSOR%NOTFOUND;
+ 20      
+ 21      TS := SALARY + NVL(COMM,0);    
+ 22      dbms_output.put_line('Emp No: ' || NO);
+ 23      dbms_output.put_line('Emp Name: ' || NAME);
+ 24      dbms_output.put_line('Total Salary: ' || TS);
+ 25      dbms_output.put_line('---------------------------');
+ 26    END LOOP;
+ 27    CLOSE SCURSOR;
+ 28  END;
+ 29  /
+Emp No: 1
+Emp Name: ARUN
+Total Salary: 600
+---------------------------
+Emp No: 2
+Emp Name: ANAND
+Total Salary: 700
+---------------------------
+
+PL/SQL procedure successfully completed.
