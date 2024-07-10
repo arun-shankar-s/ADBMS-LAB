@@ -1,0 +1,21 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE TRIGGER SP
+  2  BEFORE UPDATE ON CAR1
+  3  FOR EACH ROW
+  4  DECLARE
+  5  F NUMBER(10);
+  6  BEGIN
+  7  IF :OLD.PRICE<>:NEW.PRICE THEN
+  8  F:=:NEW.PRICE-:OLD.PRICE;
+  9  dbms_output.put_line('Change in Price='||F);
+ 10  END IF;
+ 11  END;
+ 12  /
+
+Trigger created.
+
+SQL> UPDATE CAR1 SET PRICE=300 WHERE SNO=101;
+Change in Price=200
+
+1 row updated.
+
