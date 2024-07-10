@@ -1,0 +1,15 @@
+# CAR DATABASE APPLICATION
+
+AIM: 
+
+1.Create the following database for an application and insert values to it.
+
+car(serialno,model,maufacturer,price)
+options(serialno,optionname,price)
+sales(salespersonid,serialno,date,salesprice)
+salesperson(salespersonid,name,phone)
+
+2. Do the following using PL/SQL:
+
+b) For the salesperson named joe, list the following information for all the cars he has 
+sold: serial number, manufacturer, salesprice.
