@@ -1,0 +1,26 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2    v_avg_age NUMBER;
+  3    CURSOR SCURSOR IS
+  4      SELECT 
+  5      AVG(age)
+  6      FROM CARD1
+  7      WHERE BRANCH = 'CSE';
+  8  BEGIN
+  9    OPEN SCURSOR;
+ 10    FETCH SCURSOR INTO v_avg_age;
+ 11    dbms_output.put_line('Average age of students in branch CSE is: ' || v_avg_age);
+ 12    CLOSE SCURSOR;
+ 13  END;
+ 14  /
+   
+Average age of students in branch CSE is: 19.5
+
+PL/SQL procedure successfully completed.
+
+
+
+
+# When calculating an aggregate value like the average (AVG),
+the SQL query returns a single value (or row) rather than multiple rows.
+So we don't need to loop through rows.
