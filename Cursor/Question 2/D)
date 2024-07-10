@@ -1,0 +1,24 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2    CURSOR SCURSOR IS
+  3      SELECT
+  4        CARD1.RNO,
+  5        CARD1.BRANCH,
+  6        CARD1.AGE
+  7      FROM
+  8        CARD1,AUTHOR1
+  9      WHERE
+ 10        AUTHOR1.AID=CARD1.AID
+ 11        AND AUTHOR1.ADDR='CHE';
+ 12    BEGIN
+ 13     FOR I IN SCURSOR LOOP
+ 14      dbms_output.put_line(I.RNO || ' ' || I.BRANCH || ' ' || I.AGE);
+ 15    END LOOP;
+ 16  END;
+ 17  /
+
+1 MCA 22
+2 CSE 19
+3 CSE 20
+
+PL/SQL procedure successfully completed.
