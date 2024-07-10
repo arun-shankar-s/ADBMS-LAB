@@ -1,0 +1,23 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2    CURSOR SCURSOR IS
+  3      SELECT
+  4        RNO,
+  5        BRANCH,
+  6        AGE
+  7      FROM
+  8        CARD1
+  9      WHERE
+ 10        BID IN (SELECT BID FROM BOOK1 WHERE BID != 101);
+ 11  BEGIN
+ 12    FOR I IN SCURSOR LOOP
+ 13      dbms_output.put_line(I.RNO || ' ' || I.BRANCH || ' ' || I.AGE);
+ 14    END LOOP;
+ 15  END;
+ 16  /
+ 
+1 MCA 22
+2 CSE 19
+3 CSE 20
+
+PL/SQL procedure successfully completed.
