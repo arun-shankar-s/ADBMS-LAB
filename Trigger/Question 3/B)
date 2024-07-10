@@ -1,0 +1,26 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE TRIGGER UP
+  2  BEFORE UPDATE ON DOCTOR1
+  3  FOR EACH ROW
+  4  BEGIN
+  5  IF :OLD.SPCL!='PEDIATRIC'
+  6  THEN
+  7  raise_application_error(-20961,'Updation not Possible');
+  8  END IF;
+  9  END;
+ 10  /
+
+Trigger created.
+
+SQL> UPDATE DOCTOR1 SET SALARY=25000 WHERE DID=102;
+UPDATE DOCTOR1 SET SALARY=25000 WHERE DID=102
+       *
+ERROR at line 1:
+ORA-20961: Updation not Possible
+ORA-06512: at "SCOTT.UP", line 4
+ORA-04088: error during execution of trigger 'SCOTT.UP'
+
+
+SQL> UPDATE DOCTOR1 SET SALARY=25000 WHERE DID=101;
+
+1 row updated.
