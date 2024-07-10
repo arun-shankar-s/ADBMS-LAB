@@ -1,0 +1,22 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> DECLARE
+  2  CURSOR SCURSOR IS
+  3   SELECT
+  4    AUTHOR1.AID,
+  5    AUTHOR1.NAME,
+  6    AUTHOR1.ADDR
+  7   FROM
+  8    AUTHOR1,BOOK1
+  9   WHERE
+ 10    BOOK1.BID=AUTHOR1.BID
+ 11    AND PAGES=(SELECT MAX(PAGES) FROM BOOK1);
+ 12  BEGIN
+ 13   FOR I IN SCURSOR LOOP
+ 14    dbms_output.put_line(I.AID||' '||I.NAME||' '||I.ADDR);
+ 15   END LOOP;
+ 16  END;
+ 17  /
+
+3 AMALA CHE
+
+PL/SQL procedure successfully completed.
