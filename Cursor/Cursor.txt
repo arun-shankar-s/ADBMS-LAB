@@ -1,0 +1,22 @@
+Cursor is a pointer to a Context area.
+A context area is a memory region assigned to hold the info of a select statement or a DML Statement.
+Types of Cursors:
+
+a:Implicit Cursor
+.Automatically created by Oracle for every SQL DML statement.
+.User cannot control these cursors.
+  
+b:Explicit Cursor
+.User-defined, for statements returning more than one row.
+.User has full control.
+
+SYNTAX:
+  SET SERVEROUTPUT ON;
+  DECLARE
+    CURSOR cursor_name IS select_statement;
+  BEGIN
+    OPEN cursor_name;
+    FETCH cursor_name INTO PL/SQL variable;
+    CLOSE cursor_name;
+  END;
+  /
