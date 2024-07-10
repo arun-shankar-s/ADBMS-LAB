@@ -23,3 +23,39 @@ Table created.
 
 
 
+#*******************INSERTION INTO PATIENT1*****************************
+
+SQL> INSERT INTO PATIENT1 VALUES(&PNO,'&NAME','&DOB',&AGE,'&PLACE');
+Enter value for pno: 1
+Enter value for name: MANU
+Enter value for dob: 01-JAN-1900
+Enter value for age: 124
+Enter value for place: TVM
+old   1: INSERT INTO PATIENT1 VALUES(&PNO,'&NAME','&DOB',&AGE,'&PLACE')
+new   1: INSERT INTO PATIENT1 VALUES(1,'MANU','01-JAN-1900',124,'TVM')
+
+1 row created.
+
+
+SQL> INSERT INTO PATIENT1 VALUES(&PNO,'&NAME','&DOB',&AGE,'&PLACE');
+Enter value for pno: 2
+Enter value for name: ARUN
+Enter value for dob: 11-MAY-2002
+Enter value for age: 22
+Enter value for place: TVM
+old   1: INSERT INTO PATIENT1 VALUES(&PNO,'&NAME','&DOB',&AGE,'&PLACE')
+new   1: INSERT INTO PATIENT1 VALUES(2,'ARUN','11-MAY-2002',22,'TVM')
+
+1 row created.
+
+
+
+
+
+#***********************FINAL TABLE**************************************
+SQL> select * from patient1;
+
+       PNO NAME       DOB              AGE PLACE
+---------- ---------- --------- ---------- ----------
+         1 MANU       01-JAN-00        124 TVM
+         2 ARUN       11-MAY-02         22 TVM
