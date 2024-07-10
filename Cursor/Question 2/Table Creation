@@ -1,0 +1,168 @@
+
+# *********************TABLE CREATION******************************
+
+SQL> CREATE TABLE BOOK1(BID NUMBER(3) PRIMARY KEY,TITLE VARCHAR(10),PAGES NUMBER(5),PRICE NUMBER(5))
+;
+
+Table created.
+
+
+
+SQL> CREATE TABLE AUTHOR1(AID NUMBER(3) PRIMARY KEY,NAME VARCHAR(10),ADDR VARCHAR(5),BID NUMBER(3) R
+EFERENCES BOOK1(BID));
+
+Table created.
+
+
+
+SQL> CREATE TABLE CARD1(RNO NUMBER(3) PRIMARY KEY,BRANCH VARCHAR(10),AGE NUMBER(3),BID NUMBER(3) REF
+ERENCES BOOK1(BID),AID NUMBER(3) REFERENCES AUTHOR1(AID));
+
+Table created.
+
+
+
+
+# *********************INSERTION INTO BOOK1******************************
+
+
+
+
+SQL> INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE);
+Enter value for bid: 101
+Enter value for title: ABC
+Enter value for pages: 100
+Enter value for price: 150
+old   1: INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE)
+new   1: INSERT INTO BOOK1 VALUES(101,'ABC',100,150)
+
+1 row created.
+
+SQL> INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE);
+Enter value for bid: 102
+Enter value for title: BCD
+Enter value for pages: 120
+Enter value for price: 130
+old   1: INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE)
+new   1: INSERT INTO BOOK1 VALUES(102,'BCD',120,130)
+
+1 row created.
+
+SQL> INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE);
+Enter value for bid: 103
+Enter value for title: XYZ
+Enter value for pages: 200
+Enter value for price: 200
+old   1: INSERT INTO BOOK1 VALUES(&BID,'&TITLE',&PAGES,&PRICE)
+new   1: INSERT INTO BOOK1 VALUES(103,'XYZ',200,200)
+
+1 row created.
+
+
+
+# *********************INSERTION INTO AUTHOR1******************************
+
+
+
+SQL> INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID);
+Enter value for aid: 1
+Enter value for name: ARUN
+Enter value for addr: TVM
+Enter value for bid: 101
+old   1: INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID)
+new   1: INSERT INTO AUTHOR1 VALUES(1,'ARUN','TVM',101)
+
+1 row created.
+
+
+SQL> INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID);
+Enter value for aid: 2
+Enter value for name: ANAND
+Enter value for addr: CHE
+Enter value for bid: 102
+old   1: INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID)
+new   1: INSERT INTO AUTHOR1 VALUES(2,'ANAND','CHE',102)
+
+1 row created.
+
+SQL> INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID);
+Enter value for aid: 3
+Enter value for name: AMALA
+Enter value for addr: CHE
+Enter value for bid: 103
+old   1: INSERT INTO AUTHOR1 VALUES(&AID,'&NAME','&ADDR',&BID)
+new   1: INSERT INTO AUTHOR1 VALUES(3,'AMALA','CHE',103)
+
+1 row created.
+
+
+
+# *********************INSERTION INTO CARD1******************************
+
+
+
+
+SQL> INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID);
+Enter value for rno: 01
+Enter value for branch: MCA
+Enter value for age: 22
+Enter value for bid: 102
+Enter value for aid: 2
+old   1: INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID)
+new   1: INSERT INTO CARD1 VALUES(01,'MCA',22,102,2)
+
+1 row created.
+
+SQL> INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID);
+Enter value for rno: 02
+Enter value for branch: CSE
+Enter value for age: 19
+Enter value for bid: 103
+Enter value for aid: 3
+old   1: INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID)
+new   1: INSERT INTO CARD1 VALUES(02,'CSE',19,103,3)
+
+1 row created.
+
+SQL> INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID);
+Enter value for rno: 3
+Enter value for branch: CSE
+Enter value for age: 20
+Enter value for bid: 102
+Enter value for aid: 2
+old   1: INSERT INTO CARD1 VALUES(&RNO,'&BRANCH',&AGE,&BID,&AID)
+new   1: INSERT INTO CARD1 VALUES(3,'CSE',20,102,2)
+
+1 row created.
+
+
+
+
+# *********************FINAL TABLE******************************
+
+
+
+
+SQL> SELECT * FROM BOOK1;
+
+       BID TITLE           PAGES      PRICE
+---------- ---------- ---------- ----------
+       101 ABC               100        150
+       102 BCD               120        130
+       103 XYZ               200        200
+
+SQL> SELECT * FROM AUTHOR1;
+
+       AID NAME       ADDR         BID
+---------- ---------- ----- ----------
+         1 ARUN       TVM          101
+         2 ANAND      CHE          102
+         3 AMALA      CHE          103
+
+SQL> SELECT * FROM CARD1;
+
+       RNO BRANCH            AGE        BID        AID
+---------- ---------- ---------- ---------- ----------
+         1 MCA                22        102          2
+         2 CSE                19        103          3
+         3 CSE                20        102          2
