@@ -1,0 +1,23 @@
+SQL> SET SERVEROUTPUT ON;
+  1   DECLARE
+  2   CURSOR SCURSOR IS
+  3    SELECT
+  4     car1.sno,
+  5     car1.manu,
+  6     sales1.sprice
+  7    FROM
+  8     car1,sales1,salesperson1
+  9    WHERE
+ 10     car1.sno=sales1.sno
+ 11     AND salesperson1.sid=sales1.sid
+ 12     AND salesperson1.name='Joe';
+ 13  BEGIN
+ 14    FOR I IN SCURSOR LOOP
+ 15     dbms_output.put_line(i.sno||' '||i.manu||' '||i.sprice);
+ 16    END LOOP;
+ 17  END;
+ 18  /
+
+102 Maruthi 270
+
+PL/SQL procedure successfully completed.
