@@ -4,7 +4,7 @@ STUDENT_CARD(ROLLNO,BRANCH,AGE,BOOKID,AUTHORID)
 
 =>. Do the following using PL/SQL:
 
-1. Find details of author who wrote the book which has max. no. of pages.
-2. Find the details of students who did not take ‘OS’ book.
-3. Find the average age of students in a specified branch.
-4. Find the details of students who took the books of authors in ‘Chennai’
+A. Find details of author who wrote the book which has max. no. of pages.
+B. Find the details of students who did not take ‘OS’ book.
+C. Find the average age of students in a specified branch.
+D. Find the details of students who took the books of authors in ‘Chennai’
