@@ -7,12 +7,15 @@ Types:DDL Triggers
       Compound Triggers
 
 SYNTAX:
- CREATE OR REPLACE TRIGGER Trigger_Name
- {BEFORE/AFTER} TRIGGERING EVENT ON Table_Name
- [FOR EACH ROW]
- [ENABLE/DISABLE] [WHEN CONDITION]
- DECLARE
-   *******
- BEGIN
-   *******
- END;
+ Create [or replace] trigger Trigger_name 
+[Before / after] [Insert/update/delete] 
+On Table_name 
+[For each row] 
+[When condition] 
+Declare 
+Declaration statements 
+Begin 
+Executable statements 
+Exception 
+Exception handling statements 
+End;
