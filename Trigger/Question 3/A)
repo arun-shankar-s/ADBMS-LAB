@@ -1,0 +1,32 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE TRIGGER DELE1
+  2  BEFORE DELETE ON PATIENT1
+  3  FOR EACH ROW
+  4  BEGIN
+  5  IF :OLD.DOB > TO_DATE('01/01/1910', 'MM/DD/YYYY') 
+  6  THEN
+  7  raise_application_error(-20768,'Deletion not Possible');
+  8  ELSE
+  9  dbms_output.put_line('Deleted');
+ 10  END IF;
+ 11  END;
+ 12  /
+
+Trigger created.
+
+
+
+SQL> DELETE FROM PATIENT1 WHERE PNO=2;
+DELETE FROM PATIENT1 WHERE PNO=2
+            *
+ERROR at line 1:
+ORA-20768: Deletion not Possible
+ORA-06512: at "SCOTT.DELE1", line 4
+ORA-04088: error during execution of trigger 'SCOTT.DELE1'
+
+
+SQL> DELETE FROM PATIENT1 WHERE PNO=1;
+Deleted
+
+1 row deleted.
+
