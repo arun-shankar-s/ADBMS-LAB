@@ -1,0 +1,16 @@
+SET SERVEROUTPUT ON;
+DECLARE
+ CURSOR SCURSOR1 IS
+  SELECT
+   sno,
+   model
+  FROM
+   car1
+  WHERE
+   sno NOT IN(SELECT SNO FROM OPTIONS1);
+BEGIN
+ FOR I IN SCURSOR1 LOOP
+  dbms_output.put_line(I.sno||' '||I.model);
+ END LOOP;
+END;
+/
