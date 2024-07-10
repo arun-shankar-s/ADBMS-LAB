@@ -50,6 +50,15 @@ new   1: INSERT INTO PATIENT1 VALUES(2,'ARUN','11-MAY-2002',22,'TVM')
 
 
 
+#*********************INSERTION INTO DOCTOR1*****************************
+
+SQL> INSERT INTO DOCTOR1 VALUES(101,'PEDIATRIC',20000);
+
+1 row created.
+
+SQL> INSERT INTO DOCTOR1 VALUES(102,'ORTHO',20000);
+
+1 row created.
 
 
 #***********************FINAL TABLE**************************************
@@ -59,3 +68,11 @@ SQL> select * from patient1;
 ---------- ---------- --------- ---------- ----------
          1 MANU       01-JAN-00        124 TVM
          2 ARUN       11-MAY-02         22 TVM
+
+
+SQL> SELECT * FROM DOCTOR1;
+
+       DID SPCL                SALARY
+---------- --------------- ----------
+       101 PEDIATRIC            20000
+       102 ORTHO                20000
