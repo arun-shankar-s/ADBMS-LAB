@@ -1,0 +1,4 @@
+Create table
+employee(eno,name,salary,comm);
+
+A)Create a cursor program to display the total salary of all employees.
