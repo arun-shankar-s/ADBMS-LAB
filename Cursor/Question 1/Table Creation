@@ -1,0 +1,181 @@
+# ******************TABLE CREATION***************************
+
+
+SQL>  create table car1(sno number(3) primary key,model varchar(10),manu varchar(10),price number(3));
+
+Table created.
+
+SQL> create table options1(sno number(3) references car1(sno),oname varchar(10),price number(10));
+
+Table created.
+
+
+SQL> create table salesperson1(sid number(3) primary key,name varchar(10),phone number(10));
+
+Table created.
+
+
+SQL> create table sales1(sid number(3) references salesperson1(sid),sno number(3) references car1(sno),date1 date,sprice number(10));
+
+Table created.
+
+
+# *****************INSERTION INTO CAR1***************************
+
+
+SQL> insert into car1 values(&sno,'&model','&manu',&price);
+Enter value for sno: 101
+Enter value for model: Alto
+Enter value for manu: Maruthi
+Enter value for price: 100
+old   1: insert into car1 values(&sno,'&model','&manu',&price)
+new   1: insert into car1 values(101,'Alto','Maruthi',100)
+
+1 row created.
+
+SQL> insert into car1 values(&sno,'&model','&manu',&price);
+Enter value for sno: 102
+Enter value for model: WagonR
+Enter value for manu: Maruthi
+Enter value for price: 200
+old   1: insert into car1 values(&sno,'&model','&manu',&price)
+new   1: insert into car1 values(102,'WagonR','Maruthi',200)
+
+1 row created.
+
+SQL> insert into car1 values(&sno,'&model','&manu',&price);
+Enter value for sno: 103
+Enter value for model: Swift
+Enter value for manu: Maruthi
+Enter value for price: 300
+old   1: insert into car1 values(&sno,'&model','&manu',&price)
+new   1: insert into car1 values(103,'Swift','Maruthi',300)
+
+1 row created.
+
+
+SQL> select * from car1;
+
+       SNO MODEL      MANU            PRICE
+---------- ---------- ---------- ----------
+       101 Alto       Maruthi           100
+       102 WagonR     Maruthi           200
+       103 Swift      Maruthi           300
+
+
+
+
+# *****************INSERTION INTO OPTIONS1***************************
+
+
+
+SQL> insert into options1 values(&sno,'&oname',&price);
+Enter value for sno: 102
+Enter value for oname: Lxi
+Enter value for price: 250
+old   1: insert into options1 values(&sno,'&oname',&price)
+new   1: insert into options1 values(102,'Lxi',250)
+
+1 row created.
+
+SQL> insert into options1 values(&sno,'&oname',&price);
+Enter value for sno: 102
+Enter value for oname: vxi
+Enter value for price: 270
+old   1: insert into options1 values(&sno,'&oname',&price)
+new   1: insert into options1 values(102,'vxi',270)
+
+1 row created.
+
+
+
+# *****************INSERTION INTO SALESPERSON1***************************
+
+
+
+SQL> insert into salesperson1 values(&sid,'&sname',&phone);
+Enter value for sid: 09
+Enter value for sname: Joe
+Enter value for phone: 12345
+old   1: insert into salesperson1 values(&sid,'&sname',&phone)
+new   1: insert into salesperson1 values(09,'Joe',12345)
+
+1 row created.
+
+SQL> insert into salesperson1 values(&sid,'&sname',&phone);
+Enter value for sid: 08
+Enter value for sname: Manoj
+Enter value for phone: 34567
+old   1: insert into salesperson1 values(&sid,'&sname',&phone)
+new   1: insert into salesperson1 values(08,'Manoj',34567)
+
+1 row created.
+
+
+
+
+# I*****************INSERTION INTO SALES1***************************
+
+
+SQL> insert into sales1 values(&sid,&sno,'&date',&sprice);
+Enter value for sid: 09
+Enter value for sno: 102
+Enter value for date: 12-May-2012
+Enter value for sprice: 270
+old   1: insert into sales1 values(&sid,&sno,'&date',&sprice)
+new   1: insert into sales1 values(09,102,'12-May-2012',270)
+
+1 row created.
+
+SQL> insert into sales1 values(&sid,&sno,'&date',&sprice);
+Enter value for sid: 08
+Enter value for sno: 102
+Enter value for date: 12-May-2012
+Enter value for sprice: 250
+old   1: insert into sales1 values(&sid,&sno,'&date',&sprice)
+new   1: insert into sales1 values(08,102,'12-May-2012',250)
+
+1 row created.
+
+
+
+
+
+
+
+
+# *****************FINAL TABLE***************************
+
+
+
+
+
+SQL> SELECT * FROM CAR1;
+
+       SNO MODEL      MANU            PRICE
+---------- ---------- ---------- ----------
+       101 Alto       Maruthi           100
+       102 WagonR     Maruthi           200
+       103 Swift      Maruthi           300
+
+SQL> SELECT * FROM OPTIONS1
+  2  ;
+
+       SNO ONAME           PRICE
+---------- ---------- ----------
+       102 Lxi               250
+       102 vxi               270
+
+SQL> SELECT * FROM SALESPERSON1;
+
+       SID NAME            PHONE
+---------- ---------- ----------
+         9 Joe             12345
+         8 Manoj           34567
+
+SQL> SELECT * FROM SALES1;
+
+       SID        SNO DATE1         SPRICE
+---------- ---------- --------- ----------
+         9        102 12-MAY-12        270
+         8        102 12-MAY-12        250
