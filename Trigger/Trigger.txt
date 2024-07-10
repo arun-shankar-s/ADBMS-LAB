@@ -1,0 +1,18 @@
+Specialized stored program that get executed when a triggering event occurs.
+
+Types:DDL Triggers
+      DML Triggers
+      System Event Triggers
+      Instead-of Triggers
+      Compound Triggers
+
+SYNTAX:
+ CREATE OR REPLACE TRIGGER Trigger_Name
+ {BEFORE/AFTER} TRIGGERING EVENT ON Table_Name
+ [FOR EACH ROW]
+ [ENABLE/DISABLE] [WHEN CONDITION]
+ DECLARE
+   *******
+ BEGIN
+   *******
+ END;
