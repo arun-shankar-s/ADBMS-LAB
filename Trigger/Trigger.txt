@@ -7,15 +7,14 @@ Types:DDL Triggers
       Compound Triggers
 
 SYNTAX:
- Create [or replace] trigger Trigger_name 
-[Before / after] [Insert/update/delete] 
-On Table_name 
-[For each row] 
-[When condition] 
-Declare 
-Declaration statements 
-Begin 
-Executable statements 
-Exception 
-Exception handling statements 
-End;
+CREATE OR REPLACE TRIGGER trigger_name
+BEFORE INSERT OR UPDATE OR DELETE ON table_name
+FOR EACH ROW
+WHEN (condition)
+DECLARE
+  -- Declaration statements (e.g., variables, constants)
+BEGIN
+  -- Executable statements (e.g., operations to perform when the trigger fires)
+  -- Example: Insert a log record, validate data, etc
+END;
+/
