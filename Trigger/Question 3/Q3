@@ -1,0 +1,9 @@
+Create a table below
+patient(pno,name,dob,age,place)
+doctor(did,spcl,salary)
+treatment(pno,did,fdate,tdate)
+
+2.Create triggers for the following:
+
+A) Deletion is possible from patient table if dob is less than 01/01/1910
+B) Updation is possible on doctor table if the Specialization is pediatric.
