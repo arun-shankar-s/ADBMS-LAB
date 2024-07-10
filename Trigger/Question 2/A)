@@ -1,0 +1,36 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE TRIGGER INS
+  2  AFTER INSERT ON MANAGER1
+  3  FOR EACH ROW
+  4  WHEN(NEW.MID<=50)
+  5  BEGIN
+  6  INSERT INTO EMPLOYEE1(EID,ENAME)VALUES(:NEW.MID,:NEW.MNAME);
+  7  dbms_output.put_line('Inserted into employee table and manger table');
+  8  END;
+  9  /
+
+Trigger created.
+
+SQL> INSERT INTO MANAGER1(MID,MNAME)VALUES(21,'ANAND');
+Inserted into employee table and manger table
+
+1 row created.
+
+SQL> INSERT INTO MANAGER1(MID,MNAME)VALUES(51,'Midhun');
+
+1 row created.
+
+
+SQL> select * from employee1;
+
+       EID ENAME
+---------- ----------
+        21 ANAND
+
+
+SQL> SELECT * FROM MANAGER1;
+
+       MID MNAME
+---------- ----------
+        21 ANAND
+        51 Midhun
