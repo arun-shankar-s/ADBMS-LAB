@@ -1,0 +1,10 @@
+College> db.Students.aggregate([
+  {
+    $group: {
+      _id: null,  
+      avGE: { $avg: "$age" } 
+    }
+  }
+])
+
+[ { _id: null, avge: 19.5 } ]
