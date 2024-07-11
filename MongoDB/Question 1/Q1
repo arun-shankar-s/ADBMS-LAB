@@ -1,0 +1,11 @@
+Q)In a library database,Books collection with fields,Bid,Bname,Author and  price
+
+A)Insert 5 documents
+
+B)Read all documents
+
+C)update price of Books 'Operating Systems'to 400.
+
+D)Delete book with bid=3.
+
+E)Delete all  books with price less than 500.
