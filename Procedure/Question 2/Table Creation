@@ -1,0 +1,21 @@
+SQL> create table employee5(eid number(3) primary key,doj date,desig varchar(15));
+
+Table created.
+
+
+SQL> desc employee5;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                       NOT NULL NUMBER(3)
+ DOJ                                                DATE
+ DESIG                                              VARCHAR2(15)
+
+
+
+
+SQL> select * from employee5;
+
+       EID DOJ       DESIG
+---------- --------- ---------------
+         1 12-MAY-10 ASSISTANT
+         2 12-MAY-24 ASSISTANT
