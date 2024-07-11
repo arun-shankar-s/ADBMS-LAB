@@ -1,0 +1,2 @@
+College> db.Student.countDocuments();
+3
