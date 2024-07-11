@@ -1,0 +1,14 @@
+College> db.createCollection('Student');
+{ ok: 1 }
+College> db.Student.insertMany([
+... {rno:1,name:"Arun",age:22},
+... {rno:2,name:"Anand",age:19},
+... {rno:3,name:"Amala",age:22}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('668fe16d76940e38d1e8e3e8'),
+    '1': ObjectId('668fe16d76940e38d1e8e3e9'),
+    '2': ObjectId('668fe16d76940e38d1e8e3ea')
+  }
+}
