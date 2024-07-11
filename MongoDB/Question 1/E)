@@ -1,0 +1,2 @@
+Library> db.Books.deleteMany({price:{$lt:500}})
+{ acknowledged: true, deletedCount: 2 }
