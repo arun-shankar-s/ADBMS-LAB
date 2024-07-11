@@ -1,0 +1,13 @@
+College> db.Student.find().sort({_id:-1}).forEach(printjson);
+{
+  _id: ObjectId('668fe16d76940e38d1e8e3ea'),
+  rno: 3,
+  name: 'Amala',
+  age: 27
+}
+{
+  _id: ObjectId('668fe16d76940e38d1e8e3e9'),
+  rno: 2,
+  name: 'Anand',
+  age: 19
+}
