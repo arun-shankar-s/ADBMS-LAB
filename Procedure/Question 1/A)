@@ -1,0 +1,36 @@
+SQL> SET SERVEROUTPUT ON;
+SQL> CREATE OR REPLACE PROCEDURE SG(N_NAME IN VARCHAR)
+  2  IS
+  3  MK NUMBER(3);
+  4  BEGIN
+  5  SELECT MARK INTO MK FROM STUDENT3 WHERE NAME=N_NAME;
+  6  IF MK>90 THEN
+  7  dbms_output.put_line('GRADE=A');
+  8  ELSE IF MK>80 THEN
+  9  dbms_output.put_line('GRADE=B');
+ 10  ELSE IF MK>70 THEN
+ 11  dbms_output.put_line('GRADE=C');
+ 12  ELSE IF MK>60 THEN
+ 13  dbms_output.put_line('GRADE=D');
+ 14  ELSE 
+ 15  dbms_output.put_line('FAILED');
+ 16  END IF;
+ 17  END IF;
+ 18  END IF;
+ 19  END IF;
+ 20  END SG;
+ 21  /
+
+Procedure created.
+
+SQL> execute sg('Anand');
+GRADE=A
+
+PL/SQL procedure successfully completed.
+
+SQL> execute sg('Manoj')
+FAILED
+
+PL/SQL procedure successfully completed.
+
+SQL> 
