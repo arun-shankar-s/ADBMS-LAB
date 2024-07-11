@@ -1,0 +1,4 @@
+Create a table
+employee(eid,doj,desig)
+
+A)Procedure to check an employee is elgible for promotion based on date of joining.
