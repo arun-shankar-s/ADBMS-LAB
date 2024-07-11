@@ -1,9 +1,9 @@
 College> db.createCollection('Student');
 { ok: 1 }
 College> db.Student.insertMany([
-... {rno:1,name:"Arun",age:22},
+... {rno:1,name:"Arun",age:26},
 ... {rno:2,name:"Anand",age:19},
-... {rno:3,name:"Amala",age:22}]);
+... {rno:3,name:"Amala",age:26}]);
 {
   acknowledged: true,
   insertedIds: {
