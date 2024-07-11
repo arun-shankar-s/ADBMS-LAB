@@ -1,0 +1,37 @@
+SQL> CREATE OR REPLACE PROCEDURE DES1(EID1 IN NUMBER)
+  2  IS
+  3  DT NUMBER;
+  4  JD DATE;
+  5  SD DATE;
+  6  BEGIN
+  7  SELECT DOJ INTO JD FROM EMPLOYEE5 WHERE EID=EID1;
+  8  SELECT SYSDATE INTO SD FROM DUAL;
+  9  DT:=MONTHS_BETWEEN(SD,JD)/12;
+ 10  IF DT>=3 THEN
+ 11  UPDATE EMPLOYEE5 SET DESIG='PROFESSOR' WHERE EID=EID1;
+ 12  ELSE
+ 13  dbms_output.put_line('You have to wait');
+ 14  end if;
+ 15  end des1;
+ 16  /
+
+Procedure created.
+
+SQL> EXECUTE DES1(1);
+
+PL/SQL procedure successfully completed.
+
+SQL> SELECT * FROM EMPLOYEE5;
+
+       EID DOJ       DESIG
+---------- --------- ---------------
+         1 12-MAY-10 PROFESSOR
+
+SQL> INSERT INTO EMPLOYEE5 VALUES(2,'12-MAY-2024','ASSISTANT');
+
+1 row created.
+
+SQL> EXECUTE DES1(2);
+You have to wait
+
+PL/SQL procedure successfully completed.
