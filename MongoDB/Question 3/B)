@@ -1,19 +1,56 @@
 College> db.Student1.aggregate([
-... {
-... $project:{
-... _id:0,
-... rno:1,
-... name:1,
-... age:1,
-... total:{
-... $add:["$s1","$s2","$s3"]
-... }
-... }
-... }
+...   {
+...     $project: {
+...       _id: 1,
+...       name: 1,
+...       age: 1,
+...       s1: 1,
+...       s2: 1,
+...       s3: 1,
+...       total: { $add: ["$s1", "$s2", "$s3"] }
+...     }
+...   },
+...   {
+...     $addFields: {
+...       total: "$total" 
+...     }
+...   }
 ... ])
 [
-  { rno: 1, name: 'Alice', age: 22, total: 141 },
-  { rno: 2, name: 'Anagha', age: 20, total: 30 },
-  { rno: 3, name: 'Manoj', age: 23, total: 33 },
-  { rno: 4, name: 'Erica', age: 22, total: 148 }
+  {
+    _id: ObjectId('668feede76940e38d1e8e3eb'),
+    name: 'Alice',
+    age: 22,
+    s1: 46,
+    s2: 47,
+    s3: 48,
+    total: 141
+  },
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ec'),
+    name: 'Anagha',
+    age: 20,
+    s1: 10,
+    s2: 10,
+    s3: 10,
+    total: 30
+  },
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ed'),
+    name: 'Manoj',
+    age: 23,
+    s1: 10,
+    s2: 11,
+    s3: 12,
+    total: 33
+  },
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ee'),
+    name: 'Erica',
+    age: 22,
+    s1: 49,
+    s2: 49,
+    s3: 50,
+    total: 148
+  }
 ]
