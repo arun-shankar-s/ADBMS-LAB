@@ -1,0 +1,13 @@
+Unlike procedures, functions can return a value to the caller (procedures cannot return values). This 
+value is returned through the use of the return keyword within the function.
+
+CREATE [OR REPLACE] FUNCTION function_name
+ [ (parameter [,parameter]) ]
+ RETURN return_datatype
+IS | AS
+ [declaration_section]
+BEGIN
+ executable_section
+[EXCEPTION
+ exception_section]
+END [function_name];
