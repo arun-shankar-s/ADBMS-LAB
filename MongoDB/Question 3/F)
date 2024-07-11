@@ -1,14 +1,9 @@
 College> db.Student1.aggregate([
-...   {
-...     $project: {
-...       total: { $add: ["$s1", "$s2", "$s3"] }
-...     }
-...   },
-...   {
-...     $group: {
-...       _id: null,
-...       avgTotal: { $avg: "$total" }
-...     }
-...   }
+... {
+... $group:{
+... _id:null,
+... average:{$avg:"$total"}
+... }
+... }
 ... ])
-[ { _id: null, avgTotal: 88 } ]
+[ { _id: null, average: 88 } ]
