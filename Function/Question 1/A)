@@ -1,0 +1,48 @@
+SQL> CREATE OR REPLACE FUNCTION SG1(N_NAME IN VARCHAR)
+  2  RETURN VARCHAR
+  3  IS
+  4  MK NUMBER(5);
+  5  G VARCHAR(2);
+  6  BEGIN
+  7  SELECT MARK INTO MK FROM STUDENT3 WHERE NAME=N_NAME;
+  8  IF MK>90 THEN
+  9  G:='A';
+ 10  dbms_output.put_line('GRADE='||G);
+ 11  ELSE IF MK>80 THEN
+ 12  G:='B';
+ 13  dbms_output.put_line('GRADE='||G);
+ 14  ELSE IF MK>70 THEN
+ 15  G:='C';
+ 16  dbms_output.put_line('GRADE='||G);
+ 17  ELSE IF MK>60 THEN
+ 18  G:='D';
+ 19  dbms_output.put_line('GRADE='||G);
+ 20  ELSE 
+ 21  G:='E';
+ 22  dbms_output.put_line('GRADE='||G);
+ 23  END IF;
+ 24  END IF;
+ 25  END IF;
+ 26  END IF;
+ 27  RETURN G;
+ 28  END SG1;
+ 29  /
+
+Function created.
+
+
+
+SQL> select sg1('Anand') from dual;
+
+SG1('ANAND')
+------------------------------------------------------------------------------
+A
+
+GRADE=A
+SQL> select sg1('Manoj') from dual;
+
+SG1('MANOJ')
+------------------------------------------------------------------------------
+E
+
+GRADE=E
