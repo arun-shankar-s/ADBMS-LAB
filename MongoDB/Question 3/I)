@@ -1,0 +1,23 @@
+College> db.Student1.find({name:{$regex:/ic/}}).forEach(printjson)
+{
+  _id: ObjectId('668feede76940e38d1e8e3eb'),
+  rno: 1,
+  name: 'Alice',
+  age: 22,
+  s1: 46,
+  s2: 47,
+  s3: 48,
+  total: 141,
+  t1: 93
+}
+{
+  _id: ObjectId('668feede76940e38d1e8e3ee'),
+  rno: 4,
+  name: 'Erica',
+  age: 22,
+  s1: 49,
+  s2: 49,
+  s3: 50,
+  total: 148,
+  t1: 98
+}
