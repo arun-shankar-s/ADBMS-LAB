@@ -1,0 +1,22 @@
+use database_name;
+db.createCollectiom('Collection_name')
+show collections;
+db.student.insert({name:"Archa",age:22}); OR db.student.insertOne({name:"Archa",age:22});
+
+ db.student.insertMany([{name:"Arun",age:22},
+... {name:"Amala",age:22},
+... {name:"Arun",age:22},
+... {name:"Anand",age:19}]);
+
+db.student.find().pretty()
+db.student.findOne()
+db.student.remove({name:"Archa"}) OR  db.student.deleteOne({name: "Archa"}) OR db.student.deleteMany({name: "Archa"})
+db.student.count() OR db.student.countDocuments()
+db.student.distinct("name")
+
+
+
+db.student.updateOne({name:"Arun"},{$set:{age:23}}) OR db.student.update({name:"Arun"},{$set:{age:23}})
+db.student.updateMany({},{$inc:{age:1}})  // $inc (increment)
+
+
