@@ -1,0 +1,2 @@
+College> db.Student.deleteMany({name:"Arun"});
+{ acknowledged: true, deletedCount: 1 }
