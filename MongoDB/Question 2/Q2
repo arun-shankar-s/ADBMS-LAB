@@ -6,6 +6,6 @@ C)Remove student whose name is Arun.
 D)find the total number of students in student.
 E)Display all students in distnict order.
 F)display all students in ascending order
-E)display all students in descending order
-F)Display all students whose name starts with “A”
+G)display all students in descending order
+H)Display all students whose name starts with “A”
 
