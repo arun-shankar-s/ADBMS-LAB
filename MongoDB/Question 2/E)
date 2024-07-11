@@ -1,0 +1,2 @@
+College> db.Student.distinct("rno");
+[ 2, 3 ]
