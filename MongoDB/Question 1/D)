@@ -1,0 +1,2 @@
+Library> db.Books.deleteOne({bid:3})
+{ acknowledged: true, deletedCount: 1 }
