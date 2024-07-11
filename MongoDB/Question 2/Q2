@@ -1,11 +1,12 @@
 Q)In a College database,Students collection with fields rno,name,Age .
 
 A)Insert 3 documents
-B)update student aged 25 to 27.
+B)update student aged 26 to 27.
 C)Remove student whose name is Arun.
 D)find the total number of students in student.
 E)Display all students in distnict order.
 F)display all students in ascending order
 G)display all students in descending order
 H)Display all students whose name starts with “Am”
+I)Update the age of students who are between 25 and 27 to 20
 
