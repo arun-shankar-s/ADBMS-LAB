@@ -1,21 +1,21 @@
 College> db.Student1.aggregate([
-... {
-... $project:{
-... _id:0,
-... rno:1,
-... name:1,
-... age:1,
-... total:{
-... $add:["$s1","$s2","$s3"]
-... }
-... }
-... },
-... {
-... $sort:{total:1}
-... },
-... {
-... $limit:1
-... }
+...   {
+...     $sort: { total: 1 } // Sort documents by total marks descending
+...   },
+...   {
+...     $limit: 1 // Limit to the top document which will have
+ the maximum total marks
+...   }
 ... ])
-
-[ { rno: 2, name: 'Anagha', age: 20, total: 30 } ]
+[
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ec'),
+    rno: 2,
+    name: 'Anagha',
+    age: 20,
+    s1: 10,
+    s2: 10,
+    s3: 10,
+    total: 30
+  }
+]
