@@ -1,0 +1,33 @@
+Library> db.Books.find().pretty();
+[
+  {
+    _id: ObjectId('668fdd30c7c094ab71e8e3e8'),
+    bid: 1,
+    name: 'OS',
+    price: 200
+  },
+  {
+    _id: ObjectId('668fdd30c7c094ab71e8e3e9'),
+    bid: 2,
+    name: 'DS',
+    price: 600
+  },
+  {
+    _id: ObjectId('668fdd30c7c094ab71e8e3ea'),
+    bid: 3,
+    name: 'ASE',
+    price: 700
+  },
+  {
+    _id: ObjectId('668fdd30c7c094ab71e8e3eb'),
+    bid: 4,
+    name: 'AI',
+    price: 200
+  },
+  {
+    _id: ObjectId('668fdd30c7c094ab71e8e3ec'),
+    bid: 5,
+    name: 'DF',
+    price: 500
+  }
+]
