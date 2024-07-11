@@ -1,0 +1,4 @@
+Create a table
+Student(rno,name,mark)
+
+A)FUNCTION to evaluate syudent grade by accepting the name.
