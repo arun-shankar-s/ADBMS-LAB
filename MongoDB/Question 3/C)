@@ -1,0 +1,21 @@
+College> db.Student1.aggregate([
+... {
+... $project:{
+... _id:0,
+... rno:1,
+... name:1,
+... age:1,
+... total:{
+... $add:["$s1","$s2","$s3"]
+... }
+... }
+... },
+... {
+... $sort:{total:-1}
+... },
+... {
+... $limit:1
+... }
+... ])
+
+[ { rno: 4, name: 'Erica', age: 22, total: 148 } ]
