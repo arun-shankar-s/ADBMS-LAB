@@ -1,0 +1,14 @@
+SQL> DESC STUDENT3;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RNO                                       NOT NULL NUMBER(3)
+ NAME                                               VARCHAR2(10)
+ MARK                                               NUMBER(3)
+
+SQL> SELECT * FROM STUDENT3;
+
+       RNO NAME             MARK
+---------- ---------- ----------
+         1 Anand              95
+         2 Manoj              45
+
