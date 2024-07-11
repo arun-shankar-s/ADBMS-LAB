@@ -1,0 +1,8 @@
+Library> db.Books.updateMany({name:"OS"},{$set:{price:400}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
