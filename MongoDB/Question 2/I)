@@ -1,0 +1,8 @@
+College> db.Student.updateMany({age:{$gte:25,$lte:27}},{$set:{age:20}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
