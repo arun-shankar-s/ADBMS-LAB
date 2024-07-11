@@ -1,0 +1,8 @@
+
+College> db.Student.find({name:{$regex:"Am"}}).forEach(printjson);
+{
+  _id: ObjectId('668fe16d76940e38d1e8e3ea'),
+  rno: 3,
+  name: 'Amala',
+  age: 27
+}
