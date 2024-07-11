@@ -1,22 +1,23 @@
-College> db.Student1.aggregate([
-... {
-... $project:{
-... _id:0,
-... rno:1,
-... name:1,
-... age:1,
-... total:{
-... $add:["$s1","$s2","$s3"]
-... }
-... }
-... },
-... {
-... $match:{
-... total:{$lt:50}
-... }
-... }
-... ])
+College> db.Student1.find({total:{$lt:50}})
 [
-  { rno: 2, name: 'Anagha', age: 20, total: 30 },
-  { rno: 3, name: 'Manoj', age: 23, total: 33 }
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ec'),
+    rno: 2,
+    name: 'Anagha',
+    age: 20,
+    s1: 10,
+    s2: 10,
+    s3: 10,
+    total: 30
+  },
+  {
+    _id: ObjectId('668feede76940e38d1e8e3ed'),
+    rno: 3,
+    name: 'Manoj',
+    age: 23,
+    s1: 10,
+    s2: 11,
+    s3: 12,
+    total: 33
+  }
 ]
