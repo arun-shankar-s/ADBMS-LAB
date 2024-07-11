@@ -9,4 +9,4 @@ F)display all students in ascending order
 G)display all students in descending order
 H)Display all students whose name starts with “Am”
 I)Update the age of students who are between 25 and 27 to 20
-
+J)Find the average age of existing students.
