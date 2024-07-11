@@ -1,0 +1,16 @@
+Library> db.Books insertMany([
+... {bid:1,name:"OS",price:200},
+... {bid:2,name:"DS",price:600},
+... {bid:3,name:"ASE",price:700},
+... {bid:4,name:"AI",price:200},
+... {bid:5,name:"DF",price:500}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('668fdd30c7c094ab71e8e3e8'),
+    '1': ObjectId('668fdd30c7c094ab71e8e3e9'),
+    '2': ObjectId('668fdd30c7c094ab71e8e3ea'),
+    '3': ObjectId('668fdd30c7c094ab71e8e3eb'),
+    '4': ObjectId('668fdd30c7c094ab71e8e3ec')
+  }
+}
